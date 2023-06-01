@@ -1,4 +1,4 @@
-import './Header.css';
+import "../blocks/Header.css";
 
 const Header = ({onCreateModal}) => {
   return(
@@ -18,7 +18,7 @@ const Header = ({onCreateModal}) => {
             <button className='header__add-button' type='text' onClick={onCreateModal}>+ Add New Clothes</button>
           </div>
 
-          <div className='header__user'>Terrence Tegegne</div>
+          <div className='header__user'>Chris Yee</div>
 
           <div>
           <img src={require("../images/avatar.svg").default} alt='avatar'/>
