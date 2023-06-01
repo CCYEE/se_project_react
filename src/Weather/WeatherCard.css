@@ -1,0 +1,18 @@
+.weather {
+  position: relative;
+  margin-top: 33px;
+  margin-bottom: 40px;
+}
+
+.weather_info {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  color: white;
+  font-size: 36px;
+}
+
+.weather_img {
+  width: 100%;
+  margin-bottom: 0;
+}
