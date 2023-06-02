@@ -4,39 +4,42 @@
   align-items: center;
   min-height: 60px;
   padding: 0 20px;
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
-
 .header__logo {
   display: flex;
+
   align-items: center;
 }
-
 .header__avatar-logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .header__date {
   margin-left: 24px;
-  line-height: 24px;
+  line-height: 25px;
+  font-size: 20px;
   font-weight: 700;
 }
-
-.header__user {
+.header__name {
   margin-right: 12px;
   line-height: 25px;
+  font-size: 20px;
   font-weight: 700;
 }
-
-.header__add-button {
+.header__button {
   margin-right: 20px;
   background-color: transparent;
   border: none;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 700;
 }
-
-.header__add-button:hover {
+.header__button:hover {
   cursor: pointer;
   opacity: 0.6;
 }
