@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-
 import "../blocks/App.css";
+import "../blocks/page.css";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -37,7 +37,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="page">
       <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
       <Footer />

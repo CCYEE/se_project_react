@@ -12,6 +12,8 @@ import nightSnow from "../images/night/night-snow.svg";
 import nightStorm from "../images/night/night-storm.svg";
 import nightRain from "../images/night/night-rain.svg";
 
+export const currentDate = new Date().toLocaleString('default', { month: 'long', day: 'numeric' });
+  
 export const defaultClothingItems = [
   {
     _id: 0,
@@ -113,4 +115,4 @@ export const weatherOptions = [
 
 export const latitude = 44.34;
 export const longitude = 10.99;
-export const APIkey = "b16df09c6afe056b1f402fb0333c75fb";
+export const APIkey = "9966b3564a314e82d57a5d0accfbc3eb";
