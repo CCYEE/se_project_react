@@ -1,5 +1,3 @@
-**Project 10- React WTWR**
-
 **Overview**
 
 This was our first project created as students at Practicum using React!

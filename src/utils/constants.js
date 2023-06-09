@@ -89,7 +89,7 @@ export const defaultClothingItems = [
 ];
 
 export const baseUrl =
-  "https://my-json-server.typicode.com/CCYEE/se_project_react";
+  "https://my-json-server.typicode.com/piratejing/se_project_react";
 
 export const latitude = 44.34;
 export const longitude = 10.99;
