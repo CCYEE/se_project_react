@@ -9,3 +9,8 @@
   border: none;
   background: none;
 }
+
+.clothes__button:hover {
+  cursor: pointer;
+  opacity: rgba(0, 0, 0, 80%);
+}

@@ -30,7 +30,12 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
   }, [isOpen]);
 
   return (
-    <ModalWithForm title="New garment" onClick={onClose} onSubmit={handleSubmit} buttonText="Add Garment">
+    <ModalWithForm
+      title="New garment"
+      onClick={onClose}
+      onSubmit={handleSubmit}
+      buttonText="Add Garment"
+    >
       <div className="modal__labels">
         <label className="modal__label">
           Name
@@ -49,21 +54,50 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
         </label>
         <label className="modal__label">
           Image
-          <input className="modal__input" type="url" name="link" minLength="1" placeholder="Image Url" onChange={handleLink} />
+          <input
+            className="modal__input"
+            value={link}
+            type="url"
+            name="link"
+            minLength="1"
+            placeholder="Image Url"
+            onChange={handleLink}
+          />
         </label>
       </div>
       <p className="modal__paragraph">Select the weather type:</p>
       <div className="modal__radios">
         <div className="modal__radio">
-          <input className="modal__input-radio" type="radio" name="button" id="hot" value="hot" onChange={handleWeatherType} />
+          <input
+            className="modal__input-radio"
+            type="radio"
+            name="button"
+            id="hot"
+            value="hot"
+            onChange={handleWeatherType}
+          />
           <label>Hot</label>
         </div>
         <div className="modal__radio">
-          <input className="modal__input-radio" type="radio" name="button" id="warm" value="warm" onChange={handleWeatherType} />
+          <input
+            className="modal__input-radio"
+            type="radio"
+            name="button"
+            id="warm"
+            value="warm"
+            onChange={handleWeatherType}
+          />
           <label>Warm</label>
         </div>
         <div className="modal__radio">
-          <input className="modal__input-radio" type="radio" name="button" id="cold" value="cold" onChange={handleWeatherType} />
+          <input
+            className="modal__input-radio"
+            type="radio"
+            name="button"
+            id="cold"
+            value="cold"
+            onChange={handleWeatherType}
+          />
           <label>Cold</label>
         </div>
       </div>

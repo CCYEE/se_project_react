@@ -7,7 +7,11 @@ import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
 import { defaultClothingItems } from "../utils/constants";
 import { useEffect, useState } from "react";
-import { getForecastWeather, parseWeatherData, temperature } from "../utils/weatherApi";
+import {
+  getForecastWeather,
+  parseWeatherData,
+  temperature,
+} from "../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AddItemModal from "./AddItemModal";
@@ -71,7 +75,9 @@ function App() {
     api
       .deleteItem(item.id)
       .then(() => {
-        const filteredCards = clothingItems.filter((card) => card.id !== item.id);
+        const filteredCards = clothingItems.filter(
+          (card) => card.id !== item.id
+        );
         console.log(filteredCards);
         setClothingItems(filteredCards);
         handleCloseModal();
@@ -82,24 +88,44 @@ function App() {
   };
 
   return (
-    <div>
-      <BrowserRouter>
-        <CurrentTemperatureUnitContext.Provider value={{ currentTemperatureUnit, handleToggleSwitchChange }}>
-          <Header onCreateModal={handleCreateModal} />
-          <Switch>
-            <Route exact path="/">
-              <Main weatherTemp={temp} onSelectCard={handleSelectedCard} clothingItems={clothingItems} />
-            </Route>
-            <Route path="/profile">
-              <Profile items={clothingItems} onSelectCard={handleSelectedCard} />
-            </Route>
-          </Switch>
-          <Footer />
-          {activeModal === "preview" && <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} onDelete={handleDeleteItem} />}
-          {activeModal === "create" && <AddItemModal onClose={handleCloseModal} isOpen={handleCreateModal} onAddItem={handleAddItem} />}
-        </CurrentTemperatureUnitContext.Provider>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <CurrentTemperatureUnitContext.Provider
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+      >
+        <Header onCreateModal={handleCreateModal} />
+        <Switch>
+          <Route exact path="/">
+            <Main
+              weatherTemp={temp}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+            />
+          </Route>
+          <Route path="/profile">
+            <Profile
+              items={clothingItems}
+              onSelectCard={handleSelectedCard}
+              openModal={handleCreateModal}
+            />
+          </Route>
+        </Switch>
+        <Footer />
+        {activeModal === "preview" && (
+          <ItemModal
+            selectedCard={selectedCard}
+            onClose={handleCloseModal}
+            onDelete={handleDeleteItem}
+          />
+        )}
+        {activeModal === "create" && (
+          <AddItemModal
+            onClose={handleCloseModal}
+            isOpen={handleCreateModal}
+            onAddItem={handleAddItem}
+          />
+        )}
+      </CurrentTemperatureUnitContext.Provider>
+    </BrowserRouter>
   );
 }
 
