@@ -1,26 +1,29 @@
-import SideBar from "./SideBar";
-import ClothesSection from "./ClothesSection";
-import ItemCard from "./ItemCard";
-import "../blocks/Profile.css";
-import "../blocks/ItemCards.css";
+import SideBar from "./SideBar.js";
+import ClothesSection from "./ClothesSection.js";
 
-export function Profile({ items, onSelectCard, openModal }) {
-  console.log(openModal);
+function Profile({
+  items,
+  onSelectCard,
+  openCardModal,
+  openSideEditModal,
+  onSignout,
+  onCardLike,
+}) {
   return (
     <div className="profile">
       <div className="profile__sidebar">
-        <SideBar />
+        <SideBar openModal={openSideEditModal} onSignout={onSignout} />
       </div>
       <div className="profile__clothes-section">
-        <ClothesSection openModal={openModal} />
-        <section className="cards">
-          <ul className="cards__list">
-            {items.map((card) => (
-              <ItemCard key={card.id} item={card} onSelectCard={onSelectCard} />
-            ))}
-          </ul>
-        </section>
+        <ClothesSection
+          openModal={openCardModal}
+          items={items}
+          onSelectCard={onSelectCard}
+          onCardLike={onCardLike}
+        />
       </div>
     </div>
   );
 }
+
+export default Profile;

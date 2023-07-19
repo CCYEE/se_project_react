@@ -1,11 +1,10 @@
-import "../blocks/Footer.css";
-
-const Footer = () => {
+function Footer() {
   return (
     <footer className="footer">
-      <div className="footer_name">Developed by Chris Yee</div>
-      <div className="footer_year">2023</div>
+      <p className="footer__copyright">&copy;Developed by Chris Yee</p>
+      <p className="footer__copyright-date">2023</p>
     </footer>
   );
-};
+}
+
 export default Footer;

@@ -1,20 +1,28 @@
-import { latitude, longitude, APIkey } from "./constants";
-import { checkResponse } from "./utils";
+import { latitude, longitude, apiKey } from "./constants.js";
 
-export const getForecastWeather = () => {
-  const weatherApi = fetch(` https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`).then(
-    checkResponse
-  );
-  return weatherApi;
-};
+function checkStatus(res) {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+}
 
-export const parseWeatherData = (data) => {
+function getForcastWeather() {
+  const weatherAPI = fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`
+  ).then(checkStatus);
+  return weatherAPI;
+}
+
+function parseWeatherData(data) {
   const main = data.main;
-  const temperature = main && main.temp;
-  return temperature;
-};
+  const temp = main && main.temp;
+  return Math.ceil(temp);
+}
 
-export const temperature = (temp) => ({
-  F: `${Math.round(temp)}°F`,
-  C: `${Math.round(((temp - 32) * 5) / 9)}°C`,
+const temperature = (temp) => ({
+  F: `${Math.round(temp)}`,
+  C: `${Math.round(((temp - 32) * 5) / 9)}`,
 });
+
+export { getForcastWeather, parseWeatherData, temperature, checkStatus };

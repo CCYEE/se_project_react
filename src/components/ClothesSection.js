@@ -1,12 +1,42 @@
-import "../blocks/Clothes.css";
+import { useContext } from "react";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import ItemCard from "./ItemCard.js";
 
-export default function ClothesSection({ openModal }) {
+function ClothesSection({ items, onSelectCard, openModal, onCardLike }) {
+  const { currentUser } = useContext(CurrentUserContext);
+  const userItems = items.filter((item) => item.owner === currentUser._id);
+
   return (
-    <div className="clothes">
-      <div className="clothes__title">Your items</div>
-      <button className="clothes__button" onClick={openModal}>
-        + Add new
-      </button>
+    <div className="clothes-section">
+      <div className="clothes-section__header">
+        <h3 className="clothes-section__title">Your Items</h3>
+        <button
+          className="clothes-section__add-btn"
+          type="button"
+          onClick={openModal}
+        >
+          + Add New
+        </button>
+      </div>
+      <section className="clothes-section__items">
+        <div className="clothes-section__item">
+          {userItems.map((item) => {
+            return (
+              <ItemCard
+                key={item._id}
+                id={item._id}
+                name={item.name}
+                weather={item.weather}
+                item={item}
+                onSelectCard={onSelectCard}
+                onCardLike={onCardLike}
+              />
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }
+
+export default ClothesSection;
