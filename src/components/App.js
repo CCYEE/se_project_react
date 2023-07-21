@@ -254,7 +254,7 @@ function App() {
           value={{ currentUser, isLoggedIn, noAvatar }}
         >
           <Header
-            location={"Tokyo"}
+            location={"Fremont"}
             onCreateModal={handleCreateModal}
             onLoginModal={handleSignInModal}
             onRegisterModal={handleSignUpModal}
