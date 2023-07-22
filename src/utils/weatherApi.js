@@ -26,3 +26,5 @@ const temperature = (temp) => ({
 });
 
 export { getForcastWeather, parseWeatherData, temperature, checkStatus };
+
+//test
