@@ -1,4 +1,4 @@
-import { checkStatus } from "./weatherAPI.js";
+import { checkStatus } from "./weatherApi.js";
 import { baseUrl } from "./constants.js";
 
 function getItems() {

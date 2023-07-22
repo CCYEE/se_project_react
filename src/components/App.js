@@ -6,7 +6,7 @@ import { Route, useHistory } from "react-router-dom";
 
 /*      Util Imports      */
 import { ESC_KEYCODE } from "../utils/constants.js";
-import { getForcastWeather, parseWeatherData } from "../utils/weatherAPI.js";
+import { getForcastWeather, parseWeatherData } from "../utils/weatherApi.js";
 import api from "../utils/api.js";
 import * as auth from "../utils/auth.js";
 

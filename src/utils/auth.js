@@ -1,5 +1,5 @@
 import { baseUrl } from "./constants.js";
-import { checkStatus } from "./weatherAPI.js";
+import { checkStatus } from "./weatherApi.js";
 
 export function signIn({ email, password }) {
   return fetch(`${baseUrl}/signin`, {
