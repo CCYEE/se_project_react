@@ -95,7 +95,7 @@ function App() {
       .then((data) => {
         localStorage.setItem("jwt", data.token);
         if (data.token) {
-          return auth.validTokenCheck(data.token);
+          return auth.checkToken(data.token);
         }
       })
       .then((res) => {
@@ -229,7 +229,7 @@ function App() {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
       auth
-        .validTokenCheck(jwt)
+        .checkToken(jwt)
         .then((res) => {
           setCurrentUser(res.data);
           setToken(jwt);

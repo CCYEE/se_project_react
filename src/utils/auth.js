@@ -9,9 +9,7 @@ export function signIn({ email, password }) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  })
-    .then(checkStatus)
-    .catch((e) => console.error(`Error in auth login: ${e}`));
+  }).then(checkStatus);
 }
 
 export function register({ email, password, name, avatar }) {
@@ -22,12 +20,10 @@ export function register({ email, password, name, avatar }) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password, name, avatar }),
-  })
-    .then(checkStatus)
-    .catch((e) => console.error(`Error in auth register: ${e}`));
+  }).then(checkStatus);
 }
 
-export function validTokenCheck(token) {
+export function checkToken(token) {
   return fetch(`${baseUrl}/user/me`, {
     method: "GET",
     headers: {
@@ -38,8 +34,7 @@ export function validTokenCheck(token) {
     .then(checkStatus)
     .then((data) => {
       return data;
-    })
-    .catch((e) => console.error(`Error in auth checkToken: ${e}`));
+    });
 }
 
 export function updateUser(token, { name, avatar }) {
@@ -50,7 +45,5 @@ export function updateUser(token, { name, avatar }) {
       authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ name, avatar }),
-  })
-    .then(checkStatus)
-    .catch((e) => console.error(`Error in auth update: ${e}`));
+  }).then(checkStatus);
 }
