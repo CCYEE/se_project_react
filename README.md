@@ -1,11 +1,13 @@
-**Overview**
+# WTWR (What to Wear?)
 
-Project 14. Adds more functionaility to aplication. Users can sign in/log in, add or delete clothing based on current temperature in current city, can like/dislike clothing items, update profile and log out.
+## About the project
 
-**Figma**
+The idea of the application is pretty simple - we make a call to an API, which then responds with the daily weather forecast. We collect the weather data, process it, and then based on the forecast, we recommend suitable clothing to the user.
 
-We based it off of a figma design:
+## Links
 
-https://www.figma.com/file/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?type=design&node-id=311-433&t=7MJ476faMvLgaxPk-0
+- [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
+- [Github Repository](https://github.com/CCYEE/se_project_react)
+- [Back-End Code](https://github.com/CCYEE/se_project_express)
 
-- [BackEnd Server](https://github.com/CCYEE/se_project_express)
+-[Domain Deploy Address](https://mefekki.moonangel.com/) <-- Front and Back End Deployment
