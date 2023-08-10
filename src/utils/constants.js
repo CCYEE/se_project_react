@@ -19,7 +19,10 @@ export const apiKey = "9966b3564a314e82d57a5d0accfbc3eb";
 export const latitude = 44.34;
 export const longitude = 10.99;
 export const ESC_KEYCODE = 27;
-export const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.mefekki.moonangel.com"
+    : "http://localhost:3001";
 export const weatherOptions = [
   {
     url: sunnyDay,
