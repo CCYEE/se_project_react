@@ -24,7 +24,7 @@ export function register({ email, password, name, avatar }) {
 }
 
 export function checkToken(token) {
-  return fetch(`${baseUrl}/user/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export function checkToken(token) {
 }
 
 export function updateUser(token, { name, avatar }) {
-  return fetch(`${baseUrl}/user/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
